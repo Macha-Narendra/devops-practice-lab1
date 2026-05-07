@@ -1,0 +1,28 @@
+namespace: payment
+replicaCount: 3
+image:
+  repository: nginx
+  tag: 1.26
+service:
+  type: ClusterIP
+  port: 80
+ingress:
+  enabled: true
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  cpuUtilization: 70
+config:
+  APP_ENV: dev
+  LOG_LEVEL: INFO
+secret:
+  DB_USERNAME: admin
+  DB_PASSWORD: supersecret

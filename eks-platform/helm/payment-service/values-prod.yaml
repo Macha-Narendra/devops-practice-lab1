@@ -1,0 +1,9 @@
+replicaCount: 6
+
+config:
+  APP_ENV: prod
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 512Mi

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: payment-config
+  namespace: payment
+data:
+  APP_ENV: "dev"
+  APP_PORT: "8080"
+  LOG_LEVEL: "INFO"
+
+
